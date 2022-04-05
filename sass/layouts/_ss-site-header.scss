@@ -1,0 +1,213 @@
+.site-header {
+    &.bg-cover {
+        height: 564px;
+
+        @include media-breakpoint-up(md) {
+            height: 700px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            height: 800px;
+        }
+
+        @include media-breakpoint-up(xl) {
+            height: 1076px;
+        }
+    }
+}
+
+//navbar
+.navbar {
+
+
+    &-brand {
+        max-width: 72%;
+
+        img {
+
+            @include media-breakpoint-up(md) {
+                max-width: 80%;
+            }
+
+            @include media-breakpoint-up(xl) {
+                max-width: 100%;
+            }
+        }
+    }
+
+    &-toggler {
+        span {
+            display: block;
+            width: 30px;
+            height: 3px;
+            background-color: $white;
+            transition: all 0.2s ease-in-out;
+
+            &:nth-child(2) {
+                margin: 6px 0;
+                opacity: 1;
+                visibility: visible;
+            }
+
+            &:first-child {
+                transform: none;
+            }
+
+            &:last-child {
+                transform: none;
+            }
+        }
+
+        &:not(.collapsed) {
+            span {
+
+                &:first-child {
+                    transform: translate(3px, 3px) rotate(45deg);
+                }
+
+                &:nth-child(2) {
+                    margin: 0;
+                    opacity: 0;
+                    visibility: hidden;
+                }
+
+                &:last-child {
+                    transform: translate(2px, -3px) rotate(-45deg);
+                }
+            }
+
+
+        }
+    }
+
+    &-collapse {
+
+        @include media-breakpoint-down(md) {
+            position: fixed;
+            left: -300px;
+            width: 300px;
+            top: 0;
+            bottom: 0;
+            transition: all .2s;
+            z-index: 100;
+            background-color: $white;
+            padding: 3rem 1rem;
+            box-shadow: 0px 0px 15px rgba($black, 0.19);
+
+            @include media-breakpoint-down(sm) {
+                width: 230px;
+            }
+        }
+
+        &.show {
+            left: 0;
+
+        }
+    }
+
+    &-icon {
+        color: $white;
+        @include font-size(1.5rem);
+
+        @include media-breakpoint-up(md) {
+            @include font-size(2rem);
+
+        }
+    }
+
+    &-nav {
+        @include media-breakpoint-down(md) {
+            text-align: center;
+        }
+
+        .nav-item {
+            @include media-breakpoint-up(lg) {
+                padding-left: 0.75rem;
+
+            }
+        }
+
+        .nav-link {
+            color: $white;
+            font-family: $font-lato;
+            @include font-size(1rem);
+            font-weight: 700;
+            text-transform: capitalize;
+            position: relative;
+            transition: translate 0.3s ease-in-out;
+
+            @include media-breakpoint-down(md) {
+                color: $moderate-blue;
+            }
+
+            @include media-breakpoint-up(lg) {
+                @include font-size(1.1625rem);
+            }
+
+            @include media-breakpoint-up(xl) {
+                @include font-size(1.5625rem);
+            }
+
+            &:focus,
+            &:hover {
+                // border-color: $white;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 45px;
+                    height: 3px;
+                    background: $white;
+
+                    @include media-breakpoint-down(md) {
+                        background: $moderate-blue;
+                    }
+                }
+
+            }
+
+            &--alt {
+                background-color: $white;
+                color: $moderate-blue;
+                border: 1px solid transparent;
+                border-radius: 35px;
+                min-width: auto;
+                text-align: center;
+                transition: all 0.3s ease-in-out;
+
+                @include media-breakpoint-down(md) {
+                    background-color: $moderate-blue;
+                    color: $white;
+                    margin-top: 1rem;
+                }
+
+                @include media-breakpoint-up(lg) {
+                    min-width: 145px;
+                }
+
+                @include media-breakpoint-up(xl) {
+                    min-width: 175px;
+                }
+
+                &:focus,
+                &:hover {
+                    background-color: transparent;
+                    color: $white;
+                    border-color: $white;
+
+                    &::before {
+                        display: none;
+                    }
+
+                    @include media-breakpoint-down(md) {
+                        color: $moderate-blue;
+                        border-color: $moderate-blue;
+                    }
+                }
+            }
+        }
+    }
+}

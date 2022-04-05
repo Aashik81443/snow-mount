@@ -1,0 +1,80 @@
+.blockquote {
+    max-width: 699px;
+    text-align: center;
+    margin: 0 auto;
+    font-family: $font-lato;
+     
+
+    &-author {
+        img {
+            border-radius: 50%;
+            max-width: 130px;
+            margin: 0 auto;
+
+            @include media-breakpoint-up(lg) {
+                max-width: 170px;
+            }
+
+            @include media-breakpoint-up(xl) {
+                max-width: 200px;
+            }
+        }
+    }
+
+    cite {
+        color: $moderate-blue;
+        @include font-size(1.5rem);
+        font-weight: 700;
+        font-style: inherit;
+        display: block;
+        margin-bottom: 0.5rem;
+
+        @include media-breakpoint-up(lg) {
+            @include font-size(1.8rem);
+            margin-bottom: 0.8rem;
+        }
+
+        @include media-breakpoint-up(xl) {
+            @include font-size(2rem);
+
+
+        }
+    }
+
+    &-content {
+        color: $moderate-blue;
+        @include font-size(1.1rem);
+        font-family: $font-lato;
+        font-weight: 500;
+        line-height: 1.6;
+        position: relative;
+
+        @include media-breakpoint-up(lg) {
+            @include font-size(1.3rem);
+        }
+
+        @include media-breakpoint-up(xl) {
+            @include font-size(1.5rem);
+        }
+
+        &::before {
+            position: absolute;
+            content: '\e909';
+            font-family: 'icomoon';
+            top: 0;
+            left: 0;
+        }
+
+        &::after {
+            position: absolute;
+            content: '\e908';
+            font-family: 'icomoon';
+            bottom: 0;
+            right: 0;
+        }
+
+        p {
+            padding: 0 1.5rem;
+        }
+    }
+}

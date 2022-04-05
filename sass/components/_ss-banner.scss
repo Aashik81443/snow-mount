@@ -1,0 +1,62 @@
+.banner {
+    &-content {
+        color: $white;
+        font-family: $font-lato;    
+        text-align: center;
+        text-shadow: 0px 0px 15px rgba($black, 0.25);
+        text-transform: capitalize;
+
+        h1 {
+            @include font-size(3.25rem);
+            font-weight: 600;
+
+            @include media-breakpoint-up(md) {
+                @include font-size(4.25rem);
+            }
+
+            @include media-breakpoint-up(lg) {
+                @include font-size(5.25rem);
+            }
+
+            @include media-breakpoint-up(xl) {
+                @include font-size(6.25rem);
+            }
+        }
+
+        h2 {
+            @include font-size(2.5rem);
+            font-weight: 600;
+
+            @include media-breakpoint-up(md) {
+                @include font-size(3rem);
+            }
+
+            @include media-breakpoint-up(lg) {
+                @include font-size(3.5rem);
+            }
+
+            @include media-breakpoint-up(xl) {
+                @include font-size(4.5rem);
+            }
+        }
+    }
+
+    .btn-wrap {
+        display: flex;
+        justify-content: center;
+        height: 248px;
+        align-items: end;
+
+        @include media-breakpoint-up(md){
+        height: 270px;
+        }
+
+        @include media-breakpoint-up(lg){
+        height: 280px;
+        }
+
+        @include media-breakpoint-up(xl){
+        height: 409px;
+        }
+    }
+}
